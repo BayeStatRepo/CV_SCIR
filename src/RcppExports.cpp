@@ -11,6 +11,252 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// print_it
+void print_it(int t);
+RcppExport SEXP _CVSCIR_print_it(SEXP tSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type t(tSEXP);
+    print_it(t);
+    return R_NilValue;
+END_RCPP
+}
+// rcpp_words_idx
+Rcpp::NumericVector rcpp_words_idx(NumericVector doc);
+RcppExport SEXP _CVSCIR_rcpp_words_idx(SEXP docSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericVector >::type doc(docSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_words_idx(doc));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_mat_init
+List rcpp_mat_init(int K, int W, int D);
+RcppExport SEXP _CVSCIR_rcpp_mat_init(SEXP KSEXP, SEXP WSEXP, SEXP DSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type K(KSEXP);
+    Rcpp::traits::input_parameter< int >::type W(WSEXP);
+    Rcpp::traits::input_parameter< int >::type D(DSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_mat_init(K, W, D));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_cumprob_ini
+Rcpp::NumericVector rcpp_cumprob_ini(int K);
+RcppExport SEXP _CVSCIR_rcpp_cumprob_ini(SEXP KSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type K(KSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_cumprob_ini(K));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_runif
+Rcpp::NumericVector rcpp_runif(int n);
+RcppExport SEXP _CVSCIR_rcpp_runif(SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_runif(n));
+    return rcpp_result_gen;
+END_RCPP
+}
+// rcpp_sample_cnt
+List rcpp_sample_cnt(double alpha, NumericVector probs_init, List docs_list, NumericMatrix theta, int gibbs_iters, int gibbs_burnin);
+RcppExport SEXP _CVSCIR_rcpp_sample_cnt(SEXP alphaSEXP, SEXP probs_initSEXP, SEXP docs_listSEXP, SEXP thetaSEXP, SEXP gibbs_itersSEXP, SEXP gibbs_burninSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< double >::type alpha(alphaSEXP);
+    Rcpp::traits::input_parameter< NumericVector >::type probs_init(probs_initSEXP);
+    Rcpp::traits::input_parameter< List >::type docs_list(docs_listSEXP);
+    Rcpp::traits::input_parameter< NumericMatrix >::type theta(thetaSEXP);
+    Rcpp::traits::input_parameter< int >::type gibbs_iters(gibbs_itersSEXP);
+    Rcpp::traits::input_parameter< int >::type gibbs_burnin(gibbs_burninSEXP);
+    rcpp_result_gen = Rcpp::wrap(rcpp_sample_cnt(alpha, probs_init, docs_list, theta, gibbs_iters, gibbs_burnin));
+    return rcpp_result_gen;
+END_RCPP
+}
+// sample_index
+int sample_index(const arma::vec& P_marg_z_ij);
+RcppExport SEXP _CVSCIR_sample_index(SEXP P_marg_z_ijSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::vec& >::type P_marg_z_ij(P_marg_z_ijSEXP);
+    rcpp_result_gen = Rcpp::wrap(sample_index(P_marg_z_ij));
+    return rcpp_result_gen;
+END_RCPP
+}
+// sample_index_from_joint
+arma::uvec sample_index_from_joint(const arma::mat& P_joint);
+RcppExport SEXP _CVSCIR_sample_index_from_joint(SEXP P_jointSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const arma::mat& >::type P_joint(P_jointSEXP);
+    rcpp_result_gen = Rcpp::wrap(sample_index_from_joint(P_joint));
+    return rcpp_result_gen;
+END_RCPP
+}
+// CIR_B_update_grad_ij
+Rcpp::List CIR_B_update_grad_ij(arma::mat theta_1, arma::mat theta_0, arma::vec pi_i, arma::vec pi_j, int Y_ij);
+RcppExport SEXP _CVSCIR_CIR_B_update_grad_ij(SEXP theta_1SEXP, SEXP theta_0SEXP, SEXP pi_iSEXP, SEXP pi_jSEXP, SEXP Y_ijSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type theta_1(theta_1SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type theta_0(theta_0SEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type pi_i(pi_iSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type pi_j(pi_jSEXP);
+    Rcpp::traits::input_parameter< int >::type Y_ij(Y_ijSEXP);
+    rcpp_result_gen = Rcpp::wrap(CIR_B_update_grad_ij(theta_1, theta_0, pi_i, pi_j, Y_ij));
+    return rcpp_result_gen;
+END_RCPP
+}
+// CIR_B_update_no_par
+Rcpp::List CIR_B_update_no_par(arma::mat theta_1, arma::mat theta_0, arma::mat pi, arma::mat Y, arma::mat subE);
+RcppExport SEXP _CVSCIR_CIR_B_update_no_par(SEXP theta_1SEXP, SEXP theta_0SEXP, SEXP piSEXP, SEXP YSEXP, SEXP subESEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type theta_1(theta_1SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type theta_0(theta_0SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type pi(piSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type subE(subESEXP);
+    rcpp_result_gen = Rcpp::wrap(CIR_B_update_no_par(theta_1, theta_0, pi, Y, subE));
+    return rcpp_result_gen;
+END_RCPP
+}
+// CIR_pi_update_grad_i
+Rcpp::List CIR_pi_update_grad_i(int i, arma::mat B, arma::mat phi, arma::vec Y_i_r, arma::vec Y_i_c, arma::vec subV_i);
+RcppExport SEXP _CVSCIR_CIR_pi_update_grad_i(SEXP iSEXP, SEXP BSEXP, SEXP phiSEXP, SEXP Y_i_rSEXP, SEXP Y_i_cSEXP, SEXP subV_iSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type i(iSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type B(BSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type phi(phiSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type Y_i_r(Y_i_rSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type Y_i_c(Y_i_cSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type subV_i(subV_iSEXP);
+    rcpp_result_gen = Rcpp::wrap(CIR_pi_update_grad_i(i, B, phi, Y_i_r, Y_i_c, subV_i));
+    return rcpp_result_gen;
+END_RCPP
+}
+// CIR_pi_update_no_par
+arma::mat CIR_pi_update_no_par(arma::mat B, arma::mat phi, arma::mat Y, arma::vec sub_V_xi, Rcpp::List sub_V_i_list);
+RcppExport SEXP _CVSCIR_CIR_pi_update_no_par(SEXP BSEXP, SEXP phiSEXP, SEXP YSEXP, SEXP sub_V_xiSEXP, SEXP sub_V_i_listSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type B(BSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type phi(phiSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type sub_V_xi(sub_V_xiSEXP);
+    Rcpp::traits::input_parameter< Rcpp::List >::type sub_V_i_list(sub_V_i_listSEXP);
+    rcpp_result_gen = Rcpp::wrap(CIR_pi_update_no_par(B, phi, Y, sub_V_xi, sub_V_i_list));
+    return rcpp_result_gen;
+END_RCPP
+}
+// grad_SG_global_update_ij
+Rcpp::List grad_SG_global_update_ij(arma::mat theta_0, arma::mat theta_1, arma::mat B, arma::vec pi_i, arma::vec pi_j, int Y_ij);
+RcppExport SEXP _CVSCIR_grad_SG_global_update_ij(SEXP theta_0SEXP, SEXP theta_1SEXP, SEXP BSEXP, SEXP pi_iSEXP, SEXP pi_jSEXP, SEXP Y_ijSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type theta_0(theta_0SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type theta_1(theta_1SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type B(BSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type pi_i(pi_iSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type pi_j(pi_jSEXP);
+    Rcpp::traits::input_parameter< int >::type Y_ij(Y_ijSEXP);
+    rcpp_result_gen = Rcpp::wrap(grad_SG_global_update_ij(theta_0, theta_1, B, pi_i, pi_j, Y_ij));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SG_B_update_no_par
+Rcpp::List SG_B_update_no_par(arma::mat theta_0, arma::mat theta_1, arma::mat B, arma::mat pi, arma::mat Y, arma::mat subE);
+RcppExport SEXP _CVSCIR_SG_B_update_no_par(SEXP theta_0SEXP, SEXP theta_1SEXP, SEXP BSEXP, SEXP piSEXP, SEXP YSEXP, SEXP subESEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type theta_0(theta_0SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type theta_1(theta_1SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type B(BSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type pi(piSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type subE(subESEXP);
+    rcpp_result_gen = Rcpp::wrap(SG_B_update_no_par(theta_0, theta_1, B, pi, Y, subE));
+    return rcpp_result_gen;
+END_RCPP
+}
+// grad_SG_local_update_i
+arma::mat grad_SG_local_update_i(int i, arma::vec phi_i, arma::mat B, arma::mat pi, arma::vec Y_i_p, arma::vec Y_p_i, arma::vec subV_i);
+RcppExport SEXP _CVSCIR_grad_SG_local_update_i(SEXP iSEXP, SEXP phi_iSEXP, SEXP BSEXP, SEXP piSEXP, SEXP Y_i_pSEXP, SEXP Y_p_iSEXP, SEXP subV_iSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< int >::type i(iSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type phi_i(phi_iSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type B(BSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type pi(piSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type Y_i_p(Y_i_pSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type Y_p_i(Y_p_iSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type subV_i(subV_iSEXP);
+    rcpp_result_gen = Rcpp::wrap(grad_SG_local_update_i(i, phi_i, B, pi, Y_i_p, Y_p_i, subV_i));
+    return rcpp_result_gen;
+END_RCPP
+}
+// SG_pi_update_no_par
+arma::mat SG_pi_update_no_par(arma::mat phi, arma::mat B, arma::mat pi, arma::mat Y, arma::vec V_all, Rcpp::List sub_V_xi);
+RcppExport SEXP _CVSCIR_SG_pi_update_no_par(SEXP phiSEXP, SEXP BSEXP, SEXP piSEXP, SEXP YSEXP, SEXP V_allSEXP, SEXP sub_V_xiSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type phi(phiSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type B(BSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type pi(piSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< arma::vec >::type V_all(V_allSEXP);
+    Rcpp::traits::input_parameter< Rcpp::List >::type sub_V_xi(sub_V_xiSEXP);
+    rcpp_result_gen = Rcpp::wrap(SG_pi_update_no_par(phi, B, pi, Y, V_all, sub_V_xi));
+    return rcpp_result_gen;
+END_RCPP
+}
+// P_0_fun
+double P_0_fun(arma::mat Y, arma::mat pi_0, arma::mat B_0);
+RcppExport SEXP _CVSCIR_P_0_fun(SEXP YSEXP, SEXP pi_0SEXP, SEXP B_0SEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type pi_0(pi_0SEXP);
+    Rcpp::traits::input_parameter< arma::mat >::type B_0(B_0SEXP);
+    rcpp_result_gen = Rcpp::wrap(P_0_fun(Y, pi_0, B_0));
+    return rcpp_result_gen;
+END_RCPP
+}
+// P_fun
+arma::vec P_fun(arma::mat Y, Rcpp::List pi_list, Rcpp::List B_list);
+RcppExport SEXP _CVSCIR_P_fun(SEXP YSEXP, SEXP pi_listSEXP, SEXP B_listSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat >::type Y(YSEXP);
+    Rcpp::traits::input_parameter< Rcpp::List >::type pi_list(pi_listSEXP);
+    Rcpp::traits::input_parameter< Rcpp::List >::type B_list(B_listSEXP);
+    rcpp_result_gen = Rcpp::wrap(P_fun(Y, pi_list, B_list));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcpparma_hello_world
 arma::mat rcpparma_hello_world();
 RcppExport SEXP _CVSCIR_rcpparma_hello_world() {
@@ -56,6 +302,24 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_CVSCIR_print_it", (DL_FUNC) &_CVSCIR_print_it, 1},
+    {"_CVSCIR_rcpp_words_idx", (DL_FUNC) &_CVSCIR_rcpp_words_idx, 1},
+    {"_CVSCIR_rcpp_mat_init", (DL_FUNC) &_CVSCIR_rcpp_mat_init, 3},
+    {"_CVSCIR_rcpp_cumprob_ini", (DL_FUNC) &_CVSCIR_rcpp_cumprob_ini, 1},
+    {"_CVSCIR_rcpp_runif", (DL_FUNC) &_CVSCIR_rcpp_runif, 1},
+    {"_CVSCIR_rcpp_sample_cnt", (DL_FUNC) &_CVSCIR_rcpp_sample_cnt, 6},
+    {"_CVSCIR_sample_index", (DL_FUNC) &_CVSCIR_sample_index, 1},
+    {"_CVSCIR_sample_index_from_joint", (DL_FUNC) &_CVSCIR_sample_index_from_joint, 1},
+    {"_CVSCIR_CIR_B_update_grad_ij", (DL_FUNC) &_CVSCIR_CIR_B_update_grad_ij, 5},
+    {"_CVSCIR_CIR_B_update_no_par", (DL_FUNC) &_CVSCIR_CIR_B_update_no_par, 5},
+    {"_CVSCIR_CIR_pi_update_grad_i", (DL_FUNC) &_CVSCIR_CIR_pi_update_grad_i, 6},
+    {"_CVSCIR_CIR_pi_update_no_par", (DL_FUNC) &_CVSCIR_CIR_pi_update_no_par, 5},
+    {"_CVSCIR_grad_SG_global_update_ij", (DL_FUNC) &_CVSCIR_grad_SG_global_update_ij, 6},
+    {"_CVSCIR_SG_B_update_no_par", (DL_FUNC) &_CVSCIR_SG_B_update_no_par, 6},
+    {"_CVSCIR_grad_SG_local_update_i", (DL_FUNC) &_CVSCIR_grad_SG_local_update_i, 7},
+    {"_CVSCIR_SG_pi_update_no_par", (DL_FUNC) &_CVSCIR_SG_pi_update_no_par, 6},
+    {"_CVSCIR_P_0_fun", (DL_FUNC) &_CVSCIR_P_0_fun, 3},
+    {"_CVSCIR_P_fun", (DL_FUNC) &_CVSCIR_P_fun, 3},
     {"_CVSCIR_rcpparma_hello_world", (DL_FUNC) &_CVSCIR_rcpparma_hello_world, 0},
     {"_CVSCIR_rcpparma_outerproduct", (DL_FUNC) &_CVSCIR_rcpparma_outerproduct, 1},
     {"_CVSCIR_rcpparma_innerproduct", (DL_FUNC) &_CVSCIR_rcpparma_innerproduct, 1},

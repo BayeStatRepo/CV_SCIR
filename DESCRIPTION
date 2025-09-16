@@ -1,12 +1,18 @@
 Package: CVSCIR
 Type: Package
-Title: What the Package Does (Short Line)
+Title: Control Variate-based Stochastic Sampling from the Probability Simplex
 Version: 1.0
-Date: 2025-09-16
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one
-      line).
-License: What license is it under?
-Imports: Rcpp (>= 1.0.14)
+Date: 2025-09-15
+Author: Bayesian Statistician
+Maintainer: <bayesian.statistician.repo@gmail.com>
+Description: This repository contains all code to run the experiments in the paper Control Variate-based Stochastic Sampling from the Probability Simplex. I need another sentence.
+License: LGPL (>= 3)
+Imports: Rcpp (>= 1.0.14), RcppArmadillo, parallel, doParallel, foreach, igraph, jsonlite, stringr, tidyverse, dplyr
 LinkingTo: Rcpp, RcppArmadillo
+Encoding: UTF-8
+LazyData: true
+
+
+
+
+

@@ -1,0 +1,11 @@
+utils::globalVariables(c("n_cores_used"))
+utils::globalVariables(c("Freq"))
+utils::globalVariables(c("Folder_name"))
+utils::globalVariables(c("File_name"))
+utils::globalVariables(c("Doc_row"))
+utils::globalVariables(c("idx"))
+utils::globalVariables(c("Rows"))
+utils::globalVariables(c("data_in"))
+utils::globalVariables(c("complementer"))
+utils::globalVariables(c("Row"))
+
