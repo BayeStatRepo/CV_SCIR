@@ -1,3 +1,3 @@
 # Control Variate-based Stochastic Sampling from the Probability Simplex
 
-Companion code to the preprint [Control Variate-based Stochastic Sampling from the Probability Simplex]. This code implements each of the Experiments in Section 4. For details of how to run the code for each of the examples, please see the READMEs within each of the relevant directories. 
+The repository provides companion code for the preprint “Control Variate-based Stochastic Sampling from the Probability Simplex.” All experiments described in Section 4 are implemented here. To run them, please install the CVSCIR package included in this repository. For details of how to run the code for each of the examples, please see the READMEs within each of the relevant directories. 
