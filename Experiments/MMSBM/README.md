@@ -13,7 +13,7 @@ The popular Email-Eu-Core network dataset is publicly available at [SNAP](http:/
 - The dataset does not include emails to or from individuals outside the institution.  
 - Ground-truth community memberships are provided: each individual belongs to exactly one of **K = 42 departments** at the research institute.  
 
-The dataset is provided in the `Data/` directory.
+The dataset is provided in the `Data/` directory. To replicate the results shown in Figure 5 of the paper, run the script: `R/Email_EU_dataset.R`.
 
 ## Reference
 
